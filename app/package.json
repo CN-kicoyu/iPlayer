@@ -1,0 +1,26 @@
+{
+  "main": "index.html",
+  "name": "nw-player",
+  "description": "muisc player of node-webkit",
+  "version": "0.1.0",
+  "keywords": [ "muisc player", "node-webkit" ],
+  "window": {
+    "title": "player",
+    "icon": "link.png",
+    "toolbar": true,
+    "frame": true,
+    "width": 1030,
+    "height": 716,
+    "position": "center",
+    "min_width": 910,
+    "min_height": 568,
+    "max_width": 1920,
+    "max_height": 1080
+  },
+  "nodejs": true,
+  "js-flags": "--harmony",
+  "node-remote": "<all_urls>",
+  "webkit": {
+    "plugin": true
+  }
+}

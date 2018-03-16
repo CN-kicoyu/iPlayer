@@ -1,0 +1,165 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>nw-player</title><script type=text/javascript>global.playing = true
+      global.audioList = [
+        {
+          title: "稻香",
+          titleENG: "mp3 one",
+          audioName: "1.m4a",
+          posterName: "1.jpg",
+          singer: "周杰伦"
+        },
+        {
+          title: "晴天",
+          titleENG: "mp3 one",
+          audioName: "2.m4a",
+          posterName: "2.jpg",
+          singer: "周杰伦"
+        },
+        {
+          title: "青花瓷",
+          titleENG: "mp3 one",
+          audioName: "3.m4a",
+          posterName: "3.jpg",
+          singer: "周杰伦"
+        },
+        {
+          title: "给我一首歌的时间",
+          titleENG: "mp3 one",
+          audioName: "4.m4a",
+          posterName: "4.jpg",
+          singer: "周杰伦"
+        },
+        {
+          title: "安静",
+          titleENG: "mp3 one",
+          audioName: "5.m4a",
+          posterName: "5.jpg",
+          singer: "周杰伦"
+        },
+        {
+          title: "简单爱",
+          titleENG: "mp3 one",
+          audioName: "6.m4a",
+          posterName: "6.jpg",
+          singer: "周杰伦"
+        }
+      ];
+      global.audioNormalList = []
+      global.audioRandomList = []
+      global.audioMode = 0
+      global.audioCurrentIndex = 0
+      global.videoNormalList = []
+      global.videoRandomList = []
+      // 顺序 - 0，循环 - 1， 随机 - 2
+      global.videoMode = 0
+      global.videoCurrentIndex = 0
+      global.videoList = [
+        {
+          title: "断了乱了",
+          titleENG: "video one",
+          videoName: "1.mp4",
+          posterName: "1.jpg",
+          time: "04:47",
+          singer: "庄心妍"
+        },
+        {
+          title: "刚好遇见你",
+          titleENG: "video two",
+          videoName: "2.mp4",
+          posterName: "2.jpg",
+          time: "03:23",
+          singer: "李玉刚"
+        },
+        {
+          title: "宜岚童谣",
+          titleENG: "video three",
+          videoName: "3.mp4",
+          posterName: "3.jpg",
+          time: "03:39",
+          singer: "作曲家三"
+        },
+        {
+          title: "泡沫",
+          titleENG: "video four",
+          videoName: "4.mp4",
+          posterName: "4.jpg",
+          time: "03:39",
+          singer: "作曲家四"
+        },
+        {
+          title: "逆流成河",
+          titleENG: "video five",
+          videoName: "5.mp4",
+          posterName: "5.jpg",
+          time: "03:39",
+          singer: "金南岭"
+        },
+        {
+          title: "触电",
+          titleENG: "video six",
+          videoName: "6.mp4",
+          posterName: "6.jpg",
+          time: "03:39",
+          singer: "芭比"
+        },
+        {
+          title: "鹿港廊会",
+          titleENG: "video one",
+          videoName: "1.mp4",
+          posterName: "1.jpg",
+          time: "03:39",
+          singer: "作曲家一"
+        },
+        {
+          title: "泰雅情歌",
+          titleENG: "video two",
+          videoName: "2.mp4",
+          posterName: "2.jpg",
+          time: "03:39",
+          singer: "作曲家二"
+        },
+        {
+          title: "胡春乡愁",
+          titleENG: "video three",
+          videoName: "3.mp4",
+          posterName: "3.jpg",
+          time: "03:39",
+          singer: "作曲家三"
+        },
+        {
+          title: "宜岚童谣",
+          titleENG: "video four",
+          videoName: "4.mp4",
+          posterName: "4.jpg",
+          time: "03:39",
+          singer: "作曲家四"
+        },
+        {
+          title: "安平怀古",
+          titleENG: "video five",
+          videoName: "5.mp4",
+          posterName: "5.jpg",
+          time: "03:39",
+          singer: "作曲家五"
+        },
+        {
+          title: "玉山日出",
+          titleENG: "video six",
+          videoName: "6.mp4",
+          posterName: "6.jpg",
+          time: "03:39",
+          singer: "作曲家六"
+        }
+      ]
+      var fs = require('fs')
+      global.audioList.map(function(i) {
+        var name = parseInt(i.audioName)
+        name = 'static/mp3/'+name+'.lrc'
+        fs.exists(name, function(exists) {  
+          if (exists) {
+            fs.readFile(name, 'utf-8', function(err, data) {
+              if (err) console.log(err)
+              i.lyric =  data
+            })
+          }
+        });  
+      })</script><link href=./static/css/index.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=./static/js/manifest.js></script><script type=text/javascript src=./static/js/vendor.js></script><script type=text/javascript src=./static/js/index.js></script></body></html>
